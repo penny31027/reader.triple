@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>test</title>
+    <style>
+* {
+    border: solid 1px black;
+}
+html,body {
+    margin: 0;
+    padding: 0;
+}
+.screen {
+    height: 2000px;
+}
+img {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.test {
+    background-color: yellow;
+    /* animation: move 5s; */
+}
+@keyframes move {
+    0% {margin-top: 10%;}
+    100% {margin-top: 50%;}
+}
+
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <img src="header_pics/LOGO.svg" alt="" id="image">
+        <h1 id="H1">123</h1>
+    </div>
+</body>
+
+<script>
+    const H = document.getElementById("H1");
+    // console.log(H);
+    const I = document.getElementById("image");
+    // console.log(I);
+    window.addEventListener('scroll', function (event){
+        // console.log(window.pageYOffset);
+        const Y = window.pageYOffset;
+        const style1= window.getComputedStyle(I);
+        // console.log(style1.marginTop.slice(0,-2));
+        const ori_marT = Number(style1.marginTop.slice(0,-2));
+        if (Y > 0 && Y < 300){
+            console.log(H.innerHTML);
+            // H.style.marginTop=Y+'px';
+            // console.log(I.style);
+            
+            // const style= window.getComputedStyle(box) || box.currentStyle;
+            // console.log(I.currentStyle);
+            
+            I.style.marginTop=Y+'px';
+        };
+
+    });
+    // const ST = document.getElementsByClassName('screen')[0].scrollTop;
+    // console.log(ST);
+
+    // document.documentElement.scrollTop || document.body.scrollTop
+
+    // const ST = document.documentElement.scrollTop;
+    // console.log(ST);
+
+
+
+    // const H = document.getElementById("H1").innerHTML;
+    // console.log(H+12);
+    // const S = document.getElementById("H1").scrollHeight;
+    // console.log(S);
+
+    // function keepLOGO(){
+    //     document.getElementsByTagName("img").className("test");
+
+    // };
+
+
+
+    // const logo_svg = document.getElementsByTagName("img")[0];
+    // function MOVE(){
+    //     if (window.scrollY > 10){
+    //         logo_svg.classList.add('test');
+    //     }
+    // }
+    // window.addEventListener('scroll', debounce(MOVE, 5));
+    // console.log(window.scrollY)
+</script>
+
+</html>
