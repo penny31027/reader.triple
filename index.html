@@ -76,17 +76,17 @@
     <section id="section_book">
         <div class="container">
             <div class="margintop">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
-                <img src="decoration_svg/decoration_heart.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
+                <img src="decoration_svg/decoration_heart_red.svg" alt="" class="heart">
             </div>
             <div class="marginbottom">
                 <img src="decoration_svg/decoration_rectangle.svg" alt="" class="rectangle">
@@ -185,9 +185,10 @@
                     </div>
                     <img src="section_pics/theme_20220722_front.png" alt="">                        
                 </div>
+            </div>
 
-            </div>    
-        </div> 
+        </div>
+        
     </section>
 
     <section id="section_newbook">
@@ -234,26 +235,12 @@
     
     window.addEventListener('scroll', function (event) {
         console.log(window.pageYOffset);
+        // const Y = window.innerHeight;
         const Y = window.pageYOffset;
-        // if (Y > 100 && Y < 200){
-        //     // LG.style.marginTop=Y+'px';
-            
-        //     console.log(window.pageYOffset);
-        //     PHO.style.width='500px';
-        //     PHO.style.borderRadius='20%';
-        // } else if (Y > 200 && Y < 300) {
-        //     PHO.style.width='450px';
-        //     PHO.style.borderRadius='40%';
-        // } else if (Y > 300 && Y < 400) {
-        //     PHO.style.width='400px';
-        //     PHO.style.borderRadius='60%';
-        // } else if (Y > 400 && Y < 500) {
-        //     PHO.style.width='350px';
-        //     PHO.style.borderRadius='80%';
-        // } else if (Y > 500 && Y < 600) {
-        //     PHO.style.width='300px';
-        //     PHO.style.borderRadius='100%';
-        // }
+        // const Y = window.scrollY;
+        // const Y = document.window.scrollTop;
+
+        
         if (Y>0 && Y<600){
             PHO.style.width = (-0.4*Y+550) + 'px';
             PHO.style.borderRadius = Y/5+'%';
@@ -265,18 +252,20 @@
             pic_PHO.style.marginBottom='550px';
         }
     });
-    // window.onscroll = function(){
-    //     console.log(document.body.scrollTop)
-    //     // if (document.body.scrollTop > 10) {
-    //     //     document.getElementsByClassName("logo").className="test";
-    //     // } else {
-    //     //     document.getElementsByClassName("logo").className="test";
-    //     // }
-    // };
+    
+
+
+    window.onbeforeunload = function(){
+          //刷新後頁面自動回到頂部
+        document.documentElement.scrollTop = 0;  //非ie
+        document.body.scrollTop = 0;  //ie下
+    }
 
     
 
-    
+    // window.addEventListener('scroll',function (event){
+    //     console.log(window.pageYOffset);
+    // });
     // window.addEventListener('scroll', (event) => {
     //     console.log(window.pageYOffset)
     // });
